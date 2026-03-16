@@ -14,10 +14,13 @@ export function resolveCharset(options: OTPOptions = {}): string {
       return NUMERIC;
     default:
       // custom charset string passed directly
-      if (typeof options.charset === "string" && options.charset.length > 0) {
+      if (typeof options.charset === "string") {
+        if (options.charset.length === 0) {
+          throw new Error("charset must not be empty");
+        }
         return options.charset;
       }
-      // undefined or empty string → fallback to numeric
+      // undefined → fallback to numeric
       return NUMERIC;
   }
 }
