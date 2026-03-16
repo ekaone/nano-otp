@@ -1,4 +1,4 @@
-import { OTPOptions } from "../types/otp.types";
+import type { OTPOptions } from "../types/otp.types";
 import { generate } from "./generate";
 
 export function batch(count: number, options: OTPOptions = {}): string[] {

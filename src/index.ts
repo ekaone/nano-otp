@@ -1,7 +1,7 @@
 /**
  * index.ts
- * @description Entry point for the application.
- * @author Your Name
+ * @description Main entry point for the nano-otp package
+ * @author Eka Prasetia
  * @date 2024-06-01
  * @version 1.0.0
  */
@@ -19,3 +19,4 @@ export const otp = {
 };
 
 export { generate, batch, batchUnique, verify };
+export type { OTPOptions, VerifyOptions } from "./types/otp.types";

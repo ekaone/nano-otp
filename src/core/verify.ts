@@ -1,4 +1,4 @@
-import { VerifyOptions } from "../types/otp.types";
+import type { VerifyOptions } from "../types/otp.types";
 import { safeCompare } from "../utils/safeCompare";
 
 export function verify(options: VerifyOptions): boolean {
@@ -8,7 +8,7 @@ export function verify(options: VerifyOptions): boolean {
     return false;
   }
 
-  if (expiresAt && now > expiresAt) {
+  if (expiresAt !== undefined && now > expiresAt) {
     return false;
   }
 
