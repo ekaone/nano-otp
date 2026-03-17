@@ -37,6 +37,9 @@ jobs:
       - name: Build package
         run: pnpm build
 
+      - name: Update npm to latest
+        run: npm install -g npm@latest
+
       - name: Publish to npm
         run: pnpm publish --access public --no-git-checks --provenance
         # No NODE_AUTH_TOKEN — npm token issued automatically via OIDC
