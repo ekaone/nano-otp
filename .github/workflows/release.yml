@@ -42,4 +42,3 @@ jobs:
 
       - name: Publish to npm
         run: pnpm publish --access public --no-git-checks --provenance
-        # No NODE_AUTH_TOKEN — npm token issued automatically via OIDC
