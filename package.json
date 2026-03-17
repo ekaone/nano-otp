@@ -1,22 +1,18 @@
 {
   "name": "@ekaone/nano-otp",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A lightweight, zero-dependency TypeScript library for generating and validating OTPs",
   "keywords": [
     "otp",
-    "two-factor authentication",
+    "one-time-password",
+    "two-factor-authentication",
     "2fa",
-    "typescript",
-    "library",
-    "privacy",
+    "totp",
+    "authentication",
     "security",
-    "otp-generation",
-    "data-protection",
+    "crypto",
     "typescript",
-    "library",
-    "privacy",
-    "security",
-    "data-protection"
+    "zero-dependency"
   ],
   "author": {
     "name": "Eka Prasetia",
@@ -33,9 +29,14 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
     }
   },
   "publishConfig": {
@@ -49,7 +50,7 @@
     "dev": "tsup --watch",
     "clean": "rimraf dist",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "npm run clean && npm run build && npm test",
+    "prepublishOnly": "pnpm clean && pnpm build && pnpm test",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
